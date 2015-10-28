@@ -1,0 +1,130 @@
+fileFormatVersion: 2
+guid: 28e48c01311fb4dd0b94e741563a10b2
+timeCreated: 1446044503
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: gro_er_Kreis
+    100004: Hebel
+    100006: HebelKnopf
+    100008: K_rper
+    100010: Kleiner_Kreis
+    100012: Linke_Walze
+    100014: Mittlere_Walze
+    100016: Oberes_Dreieck
+    100018: Rahmen
+    100020: Rechte_Walze
+    100022: vorneBlock
+    400000: //RootNode
+    400002: gro_er_Kreis
+    400004: Hebel
+    400006: HebelKnopf
+    400008: K_rper
+    400010: Kleiner_Kreis
+    400012: Linke_Walze
+    400014: Mittlere_Walze
+    400016: Oberes_Dreieck
+    400018: Rahmen
+    400020: Rechte_Walze
+    400022: vorneBlock
+    2300000: gro_er_Kreis
+    2300002: Hebel
+    2300004: HebelKnopf
+    2300006: K_rper
+    2300008: Kleiner_Kreis
+    2300010: Linke_Walze
+    2300012: Mittlere_Walze
+    2300014: Oberes_Dreieck
+    2300016: Rahmen
+    2300018: Rechte_Walze
+    2300020: vorneBlock
+    3300000: gro_er_Kreis
+    3300002: Hebel
+    3300004: HebelKnopf
+    3300006: K_rper
+    3300008: Kleiner_Kreis
+    3300010: Linke_Walze
+    3300012: Mittlere_Walze
+    3300014: Oberes_Dreieck
+    3300016: Rahmen
+    3300018: Rechte_Walze
+    3300020: vorneBlock
+    4300000: HebelKnopf
+    4300002: Hebel
+    4300004: Kleiner_Kreis
+    4300006: gro_er_Kreis
+    4300008: vorneBlock
+    4300010: Rechte_Walze
+    4300012: Mittlere_Walze
+    4300014: Linke_Walze
+    4300016: Rahmen
+    4300018: Oberes_Dreieck
+    4300020: K_rper
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
