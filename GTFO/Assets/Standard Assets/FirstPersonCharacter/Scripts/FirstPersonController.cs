@@ -12,7 +12,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
-        [SerializeField] private float m_RunSpeed;
+		[SerializeField] private float m_RunSpeed;
+		[SerializeField] private float m_SneakSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -160,7 +161,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayFootStepAudio()
         {
-            if (!m_CharacterController.isGrounded)
+			bool is_sneaking = Input.GetKey(KeyCode.X);
+            if (!m_CharacterController.isGrounded||is_sneaking)
             {
                 return;
             }
@@ -206,6 +208,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
             bool waswalking = m_IsWalking;
+			bool is_sneaking = Input.GetKey(KeyCode.X);
 
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
@@ -214,6 +217,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+			speed = is_sneaking ? m_SneakSpeed : speed;
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
