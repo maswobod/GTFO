@@ -42,6 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
+		private Animator animator;
+		private bool sneaking=false;
 
         // Use this for initialization
         private void Start()
@@ -56,6 +58,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+			animator = GameObject.FindWithTag ("PlayerBody").GetComponent<Animator> ();
         }
 
 
@@ -130,6 +133,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
+			SetAnimationParams (speed);
         }
 
 
@@ -209,7 +213,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             bool waswalking = m_IsWalking;
 			bool is_sneaking = Input.GetKey(KeyCode.X);
-
+			sneaking = is_sneaking;
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
@@ -220,6 +224,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			speed = is_sneaking ? m_SneakSpeed : speed;
             m_Input = new Vector2(horizontal, vertical);
 
+			if (horizontal == 0 && vertical == 0) {
+				speed=0;
+			}
             // normalize input if it exceeds 1 in combined length:
             if (m_Input.sqrMagnitude > 1)
             {
@@ -257,5 +264,22 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
-    }
+    
+		private void SetAnimationParams(float speed){
+			if (speed > m_WalkSpeed) {
+				animator.SetBool ("walk", false);
+				animator.SetBool ("run", true);
+			} else if (speed > 0) {
+				animator.SetBool ("walk", true);
+				animator.SetBool ("run", false);
+			} else {
+				animator.SetBool ("walk", false);
+				animator.SetBool ("run", false);
+			}
+		}
+		public bool IsSneaking(){
+			Debug.Log ("sneaking: " + sneaking);
+			return sneaking;
+		}
+	}
 }
