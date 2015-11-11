@@ -43,6 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 		private Animator animator;
+		private bool sneaking=false;
 
         // Use this for initialization
         private void Start()
@@ -212,7 +213,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             bool waswalking = m_IsWalking;
 			bool is_sneaking = Input.GetKey(KeyCode.X);
-
+			sneaking = is_sneaking;
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
@@ -265,7 +266,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
     
 		private void SetAnimationParams(float speed){
-			Debug.Log (speed);
 			if (speed > m_WalkSpeed) {
 				animator.SetBool ("walk", false);
 				animator.SetBool ("run", true);
@@ -276,6 +276,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				animator.SetBool ("walk", false);
 				animator.SetBool ("run", false);
 			}
+		}
+		public bool IsSneaking(){
+			Debug.Log ("sneaking: " + sneaking);
+			return sneaking;
 		}
 	}
 }
