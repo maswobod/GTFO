@@ -85,6 +85,11 @@ public class EnemyAI : MonoBehaviour
 						playerInSight = true;
 						transform.LookAt (player.transform.position);
 						Debug.Log ("And SEE you");
+
+						if(Vector3.Distance(player.transform.position,transform.position)<2.0f){
+							GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>().endGameWithLoose();
+						}
+
 					} else {
 						Debug.Log ("But something is in the way");
 					}
