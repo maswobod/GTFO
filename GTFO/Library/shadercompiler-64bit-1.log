@@ -1,111 +1,37 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-10156
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-9764
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=4 type=0 insize=982 outsize=4443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _EMISSION pd= ok=1
+  api=4 type=0 insize=938 outsize=4792 kw=POINT SHADOWS_OFF _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=982 outsize=8903 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _EMISSION pd= ok=1
+  api=4 type=1 insize=938 outsize=6718 kw=POINT SHADOWS_OFF _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=530 outsize=2224 kw=_EMISSION pd= ok=1
+  api=4 type=0 insize=982 outsize=4443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=530 outsize=2972 kw=_EMISSION pd= ok=1
+  api=4 type=1 insize=982 outsize=9480 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=977 outsize=4443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
+  api=4 type=0 insize=982 outsize=6994 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON _PARALLAXMAP _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=977 outsize=8619 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
+  api=4 type=0 insize=938 outsize=4938 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=526 outsize=2224 kw= pd= ok=1
+  api=4 type=1 insize=938 outsize=8172 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=526 outsize=1688 kw= pd= ok=1
+  api=4 type=0 insize=938 outsize=6279 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _PARALLAXMAP _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=8161 outsize=4402 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
+  api=4 type=1 insize=938 outsize=9114 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _PARALLAXMAP _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=8161 outsize=4304 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
+  api=4 type=0 insize=938 outsize=5206 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=5352 outsize=4020 kw=POINT pd= ok=1
+  api=4 type=1 insize=938 outsize=8343 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=5352 outsize=3646 kw=POINT pd= ok=1
+  api=4 type=0 insize=982 outsize=5393 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF _EMISSION VERTEXLIGHT_ON pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=5352 outsize=4020 kw=SPOT pd= ok=1
+  api=4 type=0 insize=977 outsize=6116 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF VERTEXLIGHT_ON _NORMALMAP _SPECGLOSSMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=5352 outsize=4174 kw=SPOT pd= ok=1
+  api=4 type=0 insize=934 outsize=5206 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP _SPECGLOSSMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=4892 outsize=4751 kw= pd= ok=1
+  api=4 type=1 insize=934 outsize=8286 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP _SPECGLOSSMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=4892 outsize=3849 kw= pd= ok=1
+  api=4 type=0 insize=934 outsize=4792 kw=POINT SHADOWS_OFF _NORMALMAP _SPECGLOSSMAP pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=7666 outsize=4402 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=7666 outsize=3443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=5061 outsize=4020 kw=POINT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=5061 outsize=3646 kw=POINT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=5061 outsize=4020 kw=SPOT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=5061 outsize=4174 kw=SPOT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4214 outsize=4662 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4214 outsize=1412 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4076 outsize=4662 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4076 outsize=1412 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=7400 outsize=4402 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=7400 outsize=3443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4837 outsize=4020 kw=POINT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4837 outsize=2736 kw=POINT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=4837 outsize=4020 kw=SPOT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=4837 outsize=3232 kw=SPOT pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=1482 outsize=1290 kw=SOFTPARTICLES_OFF pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=1482 outsize=827 kw=SOFTPARTICLES_OFF pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=982 outsize=5320 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=982 outsize=10244 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=938 outsize=6011 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=938 outsize=8944 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6924 outsize=4378 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6924 outsize=2850 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3093 outsize=2484 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=3093 outsize=1314 kw= pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=977 outsize=4443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP _SPECGLOSSMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=977 outsize=9480 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP _SPECGLOSSMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=934 outsize=4938 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP _SPECGLOSSMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=934 outsize=8115 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP _SPECGLOSSMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=526 outsize=2224 kw=_SPECGLOSSMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=526 outsize=1753 kw=_SPECGLOSSMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=977 outsize=4443 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=977 outsize=9407 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_ON DIRLIGHTMAP_COMBINED DYNAMICLIGHTMAP_ON _NORMALMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=938 outsize=5864 kw=POINT SHADOWS_OFF _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=938 outsize=7433 kw=POINT SHADOWS_OFF _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=938 outsize=5864 kw=SPOT SHADOWS_OFF _NORMALMAP _PARALLAXMAP pd= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=938 outsize=7928 kw=SPOT SHADOWS_OFF _NORMALMAP _PARALLAXMAP pd= ok=1
+  api=4 type=1 insize=934 outsize=6604 kw=POINT SHADOWS_OFF _NORMALMAP _SPECGLOSSMAP pd= ok=1
