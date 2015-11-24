@@ -8,8 +8,21 @@ labels:
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
+    100000: Chair02_Legs
+    100002: Chair02_Plastic
+    100004: //RootNode
+    400000: Chair02_Legs
+    400002: Chair02_Plastic
+    400004: //RootNode
+    2300000: Chair02_Legs
+    2300002: Chair02_Plastic
+    3300000: Chair02_Legs
+    3300002: Chair02_Plastic
     4300000: Chair02_Plastic
     4300002: Chair02_Legs
+    6400000: Chair02_Legs
+    6400002: Chair02_Plastic
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 3
