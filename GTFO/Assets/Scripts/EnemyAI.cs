@@ -35,6 +35,7 @@ public class EnemyAI : MonoBehaviour
 		Debug.Log (this.gameObject.transform.up);
 		if (Vector3.Distance (transform.position, player.transform.position) > hearingDistance || fpsController.IsSneaking ()) { 
 			/*when not in seight make patrol*/
+			playerInSight=false;
 			if(agent.remainingDistance <0.5f){
 				GotoNextPoint ();
 			}
@@ -42,6 +43,7 @@ public class EnemyAI : MonoBehaviour
 			/*Follow the player*/
 			//agent.destination = player.transform.position+Vector3.one;
 			agent.destination = player.transform.position+Vector3.up; /***Vector3.Up ist ein Vektor (0,1,0), Vector3.one ist (1,1,1)***/
+			playerInSight=true;		
 		}
 		
 	}
@@ -83,12 +85,12 @@ public class EnemyAI : MonoBehaviour
 			if (angle < fieldOfViewAngle * 0.5f) 
 			{
 				RaycastHit hit;
-				Debug.Log ("in Field of View");
+				//Debug.Log ("in Field of View");
 				// ... and if a raycast towards the player hits something...
 				//Debug.DrawRay(transform.position + transform.up +transform.forward, direction.normalized*10);
 				//if(Physics.Raycast(transform.position + transform.up +transform.forward, direction.normalized*10, out hit, col.radius))
 				//if (Physics.Raycast (transform.position + transform.up, direction.normalized, out hit, col.radius)) {
-				if (Physics.Raycast (transform.position + Vector3.up, direction.normalized, out hit, col.radius)) /*** +transform.up oder +Vector.up, 
+				if (Physics.Raycast (transform.position + Vector3.up, direction.normalized, out hit/*, col.radius infinity?*/)) /*** +transform.up oder +Vector.up, 
 				sollte eigentlich egal sein welches von beiden man nimmt ***/
 				{ 
 
@@ -100,7 +102,7 @@ public class EnemyAI : MonoBehaviour
 						// ... the player is in sight.
 						playerInSight = true;
 						//transform.LookAt (player.transform.position);/*** konnte komplett raus, der Agent macht das automatisch***/
-						Debug.Log ("And SEE you");
+						//Debug.Log ("And SEE you");
 						agent.destination = player.transform.position; /*** An dieser Stelle noch das neue Target setzen. 
 						Sonst wird das bis jetzt nirgends getan (Zumindest soweit ich gesehn habe***/
 						if(Vector3.Distance(player.transform.position,transform.position)<2.0f)
@@ -109,11 +111,11 @@ public class EnemyAI : MonoBehaviour
 						}
 					}
 				} 
-				else 
-				{
-					Debug.Log ("But something is in the way");
-					
-				}
+//				else 
+//				{
+//					Debug.Log ("But something is in the way");
+//					
+//				}
 			}
 		}
 	}
