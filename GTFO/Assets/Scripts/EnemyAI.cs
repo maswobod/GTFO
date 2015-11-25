@@ -62,6 +62,10 @@ public class EnemyAI : MonoBehaviour
 		destPoint = (destPoint + 1) % points.Length;
 	}
 
+    public bool isPlayerInSight ()
+    {
+        return this.playerInSight;
+    }
 	void OnTriggerStay (Collider other)
 	{
 		//Debug.Log ("on trigger stay: " + other.tag);
