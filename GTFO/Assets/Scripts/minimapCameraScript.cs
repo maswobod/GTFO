@@ -56,7 +56,7 @@ public class minimapCameraScript : MonoBehaviour {
         float xMini = (float)(Screen.width * (minimapCamera.rect.x + (objPosition.x * minimapCamera.rect.width)) - 7.5);
         float yMini = (float)(Screen.height * (1 - (minimapCamera.rect.y + (objPosition.y * minimapCamera.rect.height))) - 7.5);
         GUI.DrawTexture(new Rect(xMini, yMini, 45, 45), texturePlayer);
-
+        
         //GUI.matrix = guiRot;
         //onwillrenderobject
     }
