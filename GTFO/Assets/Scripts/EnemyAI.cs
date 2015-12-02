@@ -32,7 +32,7 @@ public class EnemyAI : MonoBehaviour
 
 	void Update ()
 	{
-		Debug.Log (this.gameObject.transform.up);
+		//Debug.Log (this.gameObject.transform.up);
 		if (Vector3.Distance (transform.position, player.transform.position) > hearingDistance || fpsController.IsSneaking ()) { 
 			/*when not in seight make patrol*/
 			if(agent.remainingDistance <0.5f){

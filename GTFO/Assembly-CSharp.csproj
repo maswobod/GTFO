@@ -49,11 +49,13 @@
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\OpenDoor.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\TriggerWin.cs" />
+     <Compile Include="Assets\Scripts\pickupItem.cs" />
      <Compile Include="Assets\Textures\Clock\Scripts\Clock.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
@@ -61,17 +63,11 @@
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Textures\Urban_Props\readme.txt" />
      <None Include="Assets\Standard Assets\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Analytics">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>D:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>

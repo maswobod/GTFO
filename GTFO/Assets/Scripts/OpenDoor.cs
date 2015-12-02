@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class OpenDoor : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class OpenDoor : MonoBehaviour {
     private Vector3 endRot;
     private bool doorOpen;
 	private bool canOpen = false;
+    private bool removeInventoryItem = false;
 
     public float angleDoor = 90;
     public float smooth = 1;
@@ -33,6 +35,11 @@ public class OpenDoor : MonoBehaviour {
 			//Open door
 			if (doorOpen) {
 				transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, endRot, Time.deltaTime * smooth);
+                if (removeInventoryItem)
+                {
+                    removeInventoryItem = false;
+                    Inventory.useItem();
+                }
 			}
 
 			//Close door
@@ -40,11 +47,16 @@ public class OpenDoor : MonoBehaviour {
 				transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, startRot, Time.deltaTime * smooth);
 			}
 
-			if (Input.GetKeyDown ("f") && transform.eulerAngles.y < 1) {
-				doorOpen = true;
+			if (Input.GetKeyDown ("f") && transform.eulerAngles.y < 1 && Inventory.inventoryList.Count > 0 ) {
+                
+                Debug.Log("Open Door", gameObject);
+                doorOpen = true;
+                removeInventoryItem = true;
+                
 			}
         
 			if (Input.GetKeyDown ("f") && transform.eulerAngles.y > 75) {
+                Debug.Log("doorOpen false");
 				doorOpen = false;
 			}
        
