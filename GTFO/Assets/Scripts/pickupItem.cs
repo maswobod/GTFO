@@ -18,10 +18,14 @@ public class pickupItem : MonoBehaviour {
     {
 
       if(col.gameObject.tag == "Player"){
-            Inventory.inventoryList.Add(23);
-            Debug.Log("Cards: " + Inventory.inventoryList.Count);
-            Debug.Log("destory", gameObject);
-            Destroy(this.gameObject);
+          //Only Pickup when inventory not full
+          if (Inventory.inventoryList.Count < 5)
+          {
+              Inventory.inventoryList.Add(23);
+              Debug.Log("Cards: " + Inventory.inventoryList.Count);
+              Debug.Log("destory", gameObject);
+              Destroy(this.gameObject);
+          }
       }
 
     }
