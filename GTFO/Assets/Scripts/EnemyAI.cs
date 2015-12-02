@@ -14,8 +14,14 @@ public class EnemyAI : MonoBehaviour
 	private SphereCollider col;
 	private GameObject player;
 	private GameController gameController;
+    private Animator animator;
+    private AnimatorSetup animSetup;
+    public float speedDampTime = 0.1f;              // Damping time for the Speed parameter.
+    public float angularSpeedDampTime = 0.7f;       // Damping time for the AngularSpeed parameter
+    public float angleResponseTime = 0.6f;          // Response time for turning an angle into angularSpee
+    public float angle = 0;
 
-	void Start ()
+    void Start ()
 	{
 		agent = GetComponent<NavMeshAgent> ();
 		// Disabling auto-braking allows for continuous movement
@@ -28,23 +34,37 @@ public class EnemyAI : MonoBehaviour
 		gameController = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
 		fpsController = player.GetComponent<FirstPersonController> ();
 		col = GetComponent<SphereCollider> ();
-	}
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+    
+
+
+        //agent.updateRotation = false;
+    }
 
 	void Update ()
 	{
-		Debug.Log (this.gameObject.transform.up);
+		Debug.Log (player);
 		if (Vector3.Distance (transform.position, player.transform.position) > hearingDistance || fpsController.IsSneaking ()) { 
-			/*when not in seight make patrol*/
-			if(agent.remainingDistance <0.5f){
+			/*when not in sight make patrol*/
+			if(agent.remainingDistance < 0.5f){
 				GotoNextPoint ();
 			}
-		} else {
+		}
+        else {
 			/*Follow the player*/
 			//agent.destination = player.transform.position+Vector3.one;
 			agent.destination = player.transform.position+Vector3.up; /***Vector3.Up ist ein Vektor (0,1,0), Vector3.one ist (1,1,1)***/
+
 		}
-		
-	}
+        float angularSpeed = angle / angleResponseTime;
+
+        // Set the mecanim parameters and apply the appropriate damping to them.
+        animator.SetFloat("Speed", agent.speed, speedDampTime, Time.deltaTime);
+        animator.SetFloat("AngularSpeed", angularSpeed, angularSpeedDampTime, Time.deltaTime);
+
+    }
+ 
 
 	void GotoNextPoint ()
 	{
@@ -62,15 +82,13 @@ public class EnemyAI : MonoBehaviour
 		destPoint = (destPoint + 1) % points.Length;
 	}
 
-    public bool isPlayerInSight ()
-    {
-        return this.playerInSight;
-    }
+
 	void OnTriggerStay (Collider other)
 	{
 		//Debug.Log ("on trigger stay: " + other.tag);
 		// If the player has entered the trigger sphere...
 		if (other.tag == "Player") {
+            Debug.Log("Player gesichtet");
 			// By default the player is not in sight.
 			//playerInSight = false;
 			//Debug.Log("player");
@@ -82,7 +100,7 @@ public class EnemyAI : MonoBehaviour
 			Debug.DrawRay(transform.position+transform.up, direction.normalized*col.radius, Color.green); /***gut zum debuggen, 
 			hatte ich vergessen, dass es die Methode noch gibt ;) ***/
 
-			float angle = Vector3.Angle (direction, transform.forward);
+			angle = Vector3.Angle (direction, transform.forward);
 			// If the angle between forward and where the player is, is less than half the angle of view...
 			if (angle < fieldOfViewAngle * 0.5f) 
 			{
@@ -121,4 +139,12 @@ public class EnemyAI : MonoBehaviour
 			}
 		}
 	}
+
+    public bool isPlayerInSight()
+    {
+        return this.playerInSight;
+    }
+
+   
+   
 }
