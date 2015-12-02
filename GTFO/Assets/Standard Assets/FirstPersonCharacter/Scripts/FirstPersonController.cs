@@ -44,6 +44,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
 		private Animator animator;
 		private bool sneaking=false;
+		private bool standing = false;
 
         // Use this for initialization
         private void Start()
@@ -101,6 +102,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
+			if (speed == 0) {
+				standing = true;
+			} else {
+				standing = false;
+			}
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
             // get a normal for the surface that is being touched to move along it
@@ -277,9 +283,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				animator.SetBool ("run", false);
 			}
 		}
-		public bool IsSneaking(){
-			Debug.Log ("sneaking: " + sneaking);
-			return sneaking;
+		public bool IsMakingNoise(){
+//			Debug.Log ("sneaking: " + sneaking);
+			if (sneaking) {
+				return false;
+			}
+			if (standing) {
+				return false;
+			}
+			return true;
 		}
 	}
 }
