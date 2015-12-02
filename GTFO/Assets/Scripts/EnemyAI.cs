@@ -20,6 +20,13 @@ public class EnemyAI : MonoBehaviour
 	public float stepInterval = 0.5f;
 	private float nextStep = 0f;
 
+	private Animator animator;
+	public float speedDampTime = 0.1f;              // Damping time for the Speed parameter.
+	public float angularSpeedDampTime = 0.7f;       // Damping time for the AngularSpeed parameter
+	public float angleResponseTime = 0.6f;          // Response time for turning an angle into angularSpee
+	public float angle = 0;
+
+
 	void Start ()
 	{
 		agent = GetComponent<NavMeshAgent> ();
@@ -34,6 +41,7 @@ public class EnemyAI : MonoBehaviour
 		fpsController = player.GetComponent<FirstPersonController> ();
 		col = GetComponent<SphereCollider> ();
 		audioSource = GetComponent<AudioSource> ();
+		animator = GetComponent<Animator>();
 	}
 
 	void Update ()
@@ -50,6 +58,12 @@ public class EnemyAI : MonoBehaviour
 			agent.destination = player.transform.position + Vector3.up; /***Vector3.Up ist ein Vektor (0,1,0), Vector3.one ist (1,1,1)***/
 			playerInSight = true;		
 		}
+
+		float angularSpeed = angle / angleResponseTime;
+		
+		// Set the mecanim parameters and apply the appropriate damping to them.
+		animator.SetFloat("Speed", agent.speed, speedDampTime, Time.deltaTime);
+		animator.SetFloat("AngularSpeed", angularSpeed, angularSpeedDampTime, Time.deltaTime);
 		
 	}
 
@@ -82,10 +96,6 @@ public class EnemyAI : MonoBehaviour
 			footstepSounds [0] = audioSource.clip;
 		}
 	}
-//	void stopSounds(){
-//		audioSource.Stop ();
-//	}
-
 	void OnTriggerStay (Collider other)
 	{
 		//Debug.Log ("on trigger stay: " + other.tag);
@@ -122,12 +132,5 @@ public class EnemyAI : MonoBehaviour
 			}
 		}
 
-	}
-
-	void OnTriggerExit (Collider other)
-	{
-		if (other.tag == "Player") {
-//			stopSounds();
-		}
 	}
 }
