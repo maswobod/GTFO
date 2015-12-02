@@ -9,9 +9,7 @@ public class Inventory : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Debug.Log("Before " + inventoryList.Count, gameObject);
-        inventoryList.Add(0);
-        Debug.Log("Added" + inventoryList.Count, gameObject);
+        Debug.Log("Cards: " + inventoryList.Count);
 	}
 	
 	// Update is called once per frame
@@ -24,7 +22,9 @@ public class Inventory : MonoBehaviour {
     {
         if (inventoryList.Count > 0)
         {
-            inventoryList.Remove(inventoryList.Count - 1);
+            Debug.Log("Remove Card nr: " + inventoryList.Count);
+            inventoryList.RemoveAt((inventoryList.Count -1));
+            Debug.Log("Cards: " + inventoryList.Count);
         }
     }
 }

@@ -30,8 +30,13 @@ public class OpenDoor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
 		//Debug.Log ("allowed: "+canOpen);
         if (canOpen) {
+            if (Input.GetKeyDown("f"))
+            {
+                Debug.Log("key pressed");
+            }
 			//Open door
 			if (doorOpen) {
 				transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, endRot, Time.deltaTime * smooth);
@@ -74,9 +79,15 @@ public class OpenDoor : MonoBehaviour {
 		}
     }
 	void OnTriggerEnter(Collider collider){
-		canOpen = true;
+        if (collider.gameObject.tag == "Player")
+        {
+            canOpen = true;
+        }
 	}
 	void OnTriggerExit(Collider collider){
-		canOpen = false;
+        if (collider.gameObject.tag == "Player")
+        {
+            canOpen = false;
+        }
 	}
 }
