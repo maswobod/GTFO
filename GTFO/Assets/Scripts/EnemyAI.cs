@@ -15,7 +15,6 @@ public class EnemyAI : MonoBehaviour
 	private GameObject player;
 	private GameController gameController;
     private Animator animator;
-    private AnimatorSetup animSetup;
     public float speedDampTime = 0.1f;              // Damping time for the Speed parameter.
     public float angularSpeedDampTime = 0.7f;       // Damping time for the AngularSpeed parameter
     public float angleResponseTime = 0.6f;          // Response time for turning an angle into angularSpee

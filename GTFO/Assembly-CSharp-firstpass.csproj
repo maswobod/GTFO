@@ -83,17 +83,42 @@
      <Compile Include="Assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\Shared\UnityStandardSurface.cginc" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\Hair\Hair_Standard.shader" />
+     <None Include="Assets\MORPH3D\Content\Shaders\StandardSpecular-doublesided.shader" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\UniqueShadow\UniqueShadow_ShadowSample.cginc" />
+     <None Include="Assets\MORPH3D\Readme.txt" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\Shared\Volund_StandardCharacterSpecularSurface.shader" />
+     <None Include="Assets\MORPH3D\Content\Shaders\Standard-doublesided.shader" />
+     <None Include="Assets\MORPH3D\Content\Shaders\Standard-2pass-doublesided-half depth.shader" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Textures\Snack_machines\readme.txt" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\Shared\UnityPBSLighting.cginc" />
+     <None Include="Assets\MORPH3D\Content\Shaders\Standard-2pass-doublesided.shader" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\Hair\Hair_setup.cginc" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
      <None Include="Assets\Textures\Urban_Props\readme.txt" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\Hair\Hair_UnityStandardCore.cginc" />
      <None Include="Assets\Standard Assets\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\MORPH3D\Content\Vendor\Unity\Volund\Features\UniqueShadow\UniqueShadow_DepthOnly.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="M3DIMPORT_DLL">
+ <HintPath>C:/Users/guenzeln/Documents/Studium/Spieleentwicklung/GTFO/GTFO/Assets/MORPH3D/Scripts/Plugins/M3DIMPORT_DLL.dll</HintPath>
+ </Reference>
+ <Reference Include="M3D_DLL">
+ <HintPath>C:/Users/guenzeln/Documents/Studium/Spieleentwicklung/GTFO/GTFO/Assets/MORPH3D/Scripts/Plugins/M3D_DLL.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
