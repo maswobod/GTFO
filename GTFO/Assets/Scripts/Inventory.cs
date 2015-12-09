@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //Start with 5 Random Cards
-        cards = new List<string>(array);
+        /*cards = new List<string>(array);
         for (int i = 0; i < 5; i++)
         {
             int num = Random.Range(0, cards.Count);
@@ -39,8 +39,6 @@ public class Inventory : MonoBehaviour {
         Debug.Log("Cards: " + inventoryList.Count);
 
         image = GameObject.FindGameObjectWithTag("Canvas").GetComponentsInChildren<Image>();
-        //image = gameObject.GetComponentsInChildren<Image>();
-        Debug.Log("DSFKLDSF" + image.Length + "dasdasd");
 
         for (int i = 0; i < inventoryList.Count; i++)
         {
@@ -50,7 +48,7 @@ public class Inventory : MonoBehaviour {
             var sprite = (Sprite)Resources.Load(name2, typeof(Sprite));
 
             image[i].sprite = sprite;
-        }
+        }*/
 
     }
 
@@ -60,12 +58,12 @@ public class Inventory : MonoBehaviour {
 	}
 
     //Use Card for something
-    static public void useItem()
+    static public void useItem(string cardToOpen)
     {
         if (inventoryList.Count > 0)
         {
             Debug.Log("Remove Card nr: " + inventoryList.Count);
-            inventoryList.RemoveAt((inventoryList.Count -1));
+            inventoryList.Remove(cardToOpen);
             Debug.Log("Cards: " + inventoryList.Count);
         }
     }

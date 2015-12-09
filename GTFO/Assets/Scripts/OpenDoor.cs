@@ -13,9 +13,11 @@ public class OpenDoor : MonoBehaviour {
     private bool doorOpen;
 	private bool canOpen = false;
     private bool removeInventoryItem = false;
-
     public float angleDoor = 90;
     public float smooth = 1;
+
+    //Card to open
+    public string cardToOpen = "Karo2";
     
 
     void Start () {
@@ -43,7 +45,7 @@ public class OpenDoor : MonoBehaviour {
                 if (removeInventoryItem)
                 {
                     removeInventoryItem = false;
-                    Inventory.useItem();
+                    Inventory.useItem(cardToOpen);
                 }
 			}
 
@@ -52,7 +54,7 @@ public class OpenDoor : MonoBehaviour {
 				transform.eulerAngles = Vector3.Slerp (transform.eulerAngles, startRot, Time.deltaTime * smooth);
 			}
 
-			if (Input.GetKeyDown ("f") && transform.eulerAngles.y < 1 && Inventory.inventoryList.Count > 0 ) {
+			if (Input.GetKeyDown ("f") && transform.eulerAngles.y < 1 && Inventory.inventoryList.Contains(cardToOpen) ) {
                 
                 Debug.Log("Open Door", gameObject);
                 doorOpen = true;

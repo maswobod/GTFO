@@ -21,3 +21,7 @@ Cmd: compileSnippet
   api=4 type=0 insize=938 outsize=4792 kw=SPOT SHADOWS_OFF _NORMALMAP pd= ok=1
 Cmd: compileSnippet
   api=4 type=1 insize=938 outsize=7213 kw=SPOT SHADOWS_OFF _NORMALMAP pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=934 outsize=4792 kw=SPOT SHADOWS_OFF _NORMALMAP pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=934 outsize=7099 kw=SPOT SHADOWS_OFF _NORMALMAP pd= ok=1
