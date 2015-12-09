@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class pickupItem : MonoBehaviour {
 
-	// Use this for initialization
+    //Card with Default Value
+    public string cardValue = "Karo2";
+
 	void Start () {
 	
 	}
@@ -21,7 +23,7 @@ public class pickupItem : MonoBehaviour {
           //Only Pickup when inventory not full
           if (Inventory.inventoryList.Count < 5)
           {
-              Inventory.inventoryList.Add(23);
+              Inventory.inventoryList.Add(cardValue);
               Debug.Log("Cards: " + Inventory.inventoryList.Count);
               Debug.Log("destory", gameObject);
               Destroy(this.gameObject);
