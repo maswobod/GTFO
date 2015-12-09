@@ -1,11 +1,27 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-2468
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-9212
 Cmd: getPlatforms
 Cmd: compileSnippet
-  api=4 type=0 insize=7407 outsize=4093 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF pd= ok=1
+  api=4 type=0 insize=1350842 outsize=2273 kw=SHADOWS_CUBE _NORMALMAP _SPECGLOSSMAP _ALPHATEST_ON _DETAIL_MULX2 pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=7407 outsize=1656 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF pd= ok=1
+  api=4 type=1 insize=1350842 outsize=1444 kw=SHADOWS_CUBE _NORMALMAP _SPECGLOSSMAP _ALPHATEST_ON _DETAIL_MULX2 pd= ok=1
 Cmd: compileSnippet
-  api=4 type=0 insize=3946 outsize=2753 kw=DIRECTIONAL pd= ok=1
+  api=4 type=0 insize=751 outsize=1420 kw=SHADOWS_CUBE pd= ok=1
 Cmd: compileSnippet
-  api=4 type=1 insize=3946 outsize=1168 kw=DIRECTIONAL pd= ok=1
+  api=4 type=1 insize=751 outsize=624 kw=SHADOWS_CUBE pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=936 outsize=4938 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=936 outsize=8099 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1611822 outsize=4792 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP _SPECGLOSSMAP _ALPHATEST_ON _DETAIL_MULX2 pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1611822 outsize=10520 kw=POINT SHADOWS_CUBE SHADOWS_SOFT _NORMALMAP _SPECGLOSSMAP _ALPHATEST_ON _DETAIL_MULX2 pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1611822 outsize=5336 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP _SPECGLOSSMAP _ALPHATEST_ON _DETAIL_MULX2 pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1611822 outsize=10723 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP _SPECGLOSSMAP _ALPHATEST_ON _DETAIL_MULX2 pd= ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=936 outsize=5206 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP pd= ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=936 outsize=8269 kw=SPOT SHADOWS_DEPTH SHADOWS_SOFT SHADOWS_NATIVE _NORMALMAP pd= ok=1
