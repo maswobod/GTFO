@@ -45,11 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Hideable.cs" />
+     <Compile Include="Assets\DisplayResult.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\EnemyAI.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\Hideable.cs" />
      <Compile Include="Assets\Scripts\OpenDoor.cs" />
      <Compile Include="Assets\Scripts\Patrol.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
@@ -57,6 +57,7 @@
      <Compile Include="Assets\Scripts\TriggerWin.cs" />
      <Compile Include="Assets\Scripts\minimapCameraScript.cs" />
      <Compile Include="Assets\Textures\Clock\Scripts\Clock.cs" />
+     <Compile Include="Assets\startScreenController.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Textures\Snack_machines\readme.txt" />

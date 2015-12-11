@@ -10,7 +10,6 @@ public class EnemyAI : MonoBehaviour
 	private NavMeshAgent agent;
 	public float hearingDistance;
 	private FirstPersonController fpsController;
-	private bool playerInSight;
 	public float fieldOfViewAngle = 180;
 	private SphereCollider col;
 	private GameObject player;
@@ -48,15 +47,13 @@ public class EnemyAI : MonoBehaviour
 	{
 		if (Vector3.Distance (transform.position, player.transform.position) > hearingDistance || fpsController.IsMakingNoise ()) { 
 			/*when not in seight make patrol*/
-			playerInSight = false;
 			if (agent.remainingDistance < 0.5f) {
 				GotoNextPoint ();
 			}
 		} else {
 			/*Follow the player*/
 	
-			agent.destination = player.transform.position + Vector3.up; /***Vector3.Up ist ein Vektor (0,1,0), Vector3.one ist (1,1,1)***/
-			playerInSight = true;		
+			agent.destination = player.transform.position + Vector3.up; /***Vector3.Up ist ein Vektor (0,1,0), Vector3.one ist (1,1,1)***/	
 		}
 
 		float angularSpeed = angle / angleResponseTime;
@@ -122,8 +119,9 @@ public class EnemyAI : MonoBehaviour
 
 					if (hit.collider.gameObject == player.gameObject) {
 						// ... the player is in sight.
-						playerInSight = true;
-						agent.destination = player.transform.position; 
+						if (fpsController.IsVisibleForEnemy ()) {
+							agent.destination = player.transform.position;
+						}
 						if (Vector3.Distance (player.transform.position, transform.position) < 2.0f) {
 							gameController.endGameWithLoose (); //Besser in der Start() schon suchen
 						}

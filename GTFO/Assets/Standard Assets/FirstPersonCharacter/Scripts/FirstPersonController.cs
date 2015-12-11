@@ -45,6 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private Animator animator;
 		private bool sneaking=false;
 		private bool standing = false;
+		private bool hideing = false;
 
         // Use this for initialization
         private void Start()
@@ -284,7 +285,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			}
 		}
 		public bool IsMakingNoise(){
-//			Debug.Log ("sneaking: " + sneaking);
 			if (sneaking) {
 				return false;
 			}
@@ -292,6 +292,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				return false;
 			}
 			return true;
+		}
+		public bool IsVisibleForEnemy(){
+			return !hideing;
+		}
+		public void setHideing(bool hideing){
+			this.hideing = hideing;
 		}
 	}
 }
