@@ -30,7 +30,7 @@ public class DisplayResult : MonoBehaviour {
 			}
 		}else{
 			t.text="Game over !!";
-			rank.text = "Your Rank:  None";
+			rank.text = "";
 		}
 		int[] val;
 		string[] names;

@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\minimapCameraScript.cs" />
      <Compile Include="Assets\Scripts\startScreenController.cs" />
      <Compile Include="Assets\Textures\Clock\Scripts\Clock.cs" />
+     <Compile Include="Assets\open.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Textures\Snack_machines\readme.txt" />
