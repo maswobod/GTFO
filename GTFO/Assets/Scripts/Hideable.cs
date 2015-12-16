@@ -2,13 +2,13 @@
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
+/**
+ * makes a (dark) area where the player can hide and will not be seen (but heard)
+**/
 public class Hideable : MonoBehaviour {
 	private FirstPersonController fps;
 
 
-
-
-	// Use this for initialization
 	void Start () {
 		fps = GameObject.FindGameObjectWithTag ("Player").GetComponent<FirstPersonController> ();;
 	}

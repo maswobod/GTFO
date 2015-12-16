@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/**
+*	The Component manages the counting of the score and the Highscore. 
+*	Should be used by GameController (and nothing else if your not sure).
+**/
 public class Score : MonoBehaviour
 {
 
@@ -9,6 +13,7 @@ public class Score : MonoBehaviour
 	private static int score;
 	private const int baseVal = 600;
 	private const int highScoreSize = 10;
+	// not used for all !!!
 	private const string valKey = "highScoreVal";
 	private const string nameKey = "highScoreName";
 	private static int[] highScoreValues = new int[10];
@@ -16,11 +21,13 @@ public class Score : MonoBehaviour
 	private static bool InHighScore = false;
 	private static int rank;
 
+	//set win true
 	public void Win ()
 	{
 		win = true;
 	}
 
+	// load the saved highscore at start
 	public void Start ()
 	{
 		for (int i = 0; i < highScoreSize; i++) {
@@ -29,6 +36,7 @@ public class Score : MonoBehaviour
 		}
 	}
 
+	// measure time TODO: measure more.
 	public void StartCounting ()
 	{
 		start = Time.time;
@@ -40,13 +48,14 @@ public class Score : MonoBehaviour
 		return score;
 	}
 
+	// Stop counting (time) TODO: you get it. (more)
 	public void Stop ()
 	{
 		Debug.Log (PlayerPrefs.GetString ("PlayerName", "Player"));
 		score = baseVal - (int)(Time.time - start);
 		rank = getRank ();
 		if (win) {
-			if (rank <= 10) {
+			if (rank <= highScoreSize) {
 				InHighScore = true;
 				saveScoreToHighscore (PlayerPrefs.GetString ("PlayerName", "Player"), rank);
 			} else {
@@ -65,16 +74,15 @@ public class Score : MonoBehaviour
 		return InHighScore;
 	}
 
-
+	// set win false
 	public void Loose ()
 	{
 		win = false;
 	}
 
-
 	/**
 	Saves the score to file and inserts the player at @rank position
-	should be called if you 
+	should be called if you are in highscore. So that there is something to save.
 	**/
 	public void saveScoreToHighscore (string name, int rank)
 	{
@@ -104,16 +112,19 @@ public class Score : MonoBehaviour
 		PlayerPrefs.Save ();
 	}
 
+	// returns array of all values in highscore oredered by rank
 	public int[] getHighscoreValues ()
 	{
 		return highScoreValues;
 	}
 
+	// all names ordered by rank
 	public string[] getHighscoreNames ()
 	{
 		return highScoreNames;
 	}
 
+	// calculates the rank after game is won. (only call it if you win)
 	private int getRank ()
 	{
 		int i;
@@ -135,6 +146,7 @@ public class Score : MonoBehaviour
 		return highScoreSize;
 	}
 
+	// gives you the values and the names ordered by rank.
 	public static void getHighscores (out int[]val, out string[] names)
 	{
 		val = new int[highScoreSize];
@@ -144,5 +156,4 @@ public class Score : MonoBehaviour
 			names [i] = PlayerPrefs.GetString (nameKey + i, "No entry");
 		}
 	}
-
 }

@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+/**
+* Displays the Result in the EndScreen of the Game
+**/
 public class DisplayResult : MonoBehaviour {
 	public Text t;
 
@@ -17,6 +19,8 @@ public class DisplayResult : MonoBehaviour {
 	public Text p10;
 	public Text rank;
 
+
+	// show all highscore in the Text field on start of endscreen.
 	void Start(){
 		Score score = GameObject.FindGameObjectWithTag ("Score").GetComponent<Score>();
 
