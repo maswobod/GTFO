@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //Start with 5 Random Cards
-        /*cards = new List<string>(array);
+      /*  cards = new List<string>(array);
         for (int i = 0; i < 5; i++)
         {
             int num = Random.Range(0, cards.Count);
@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour {
 
         Debug.Log("Cards: " + inventoryList.Count);
 
-        image = GameObject.FindGameObjectWithTag("Canvas").GetComponentsInChildren<Image>();
+       /* image = GameObject.FindGameObjectWithTag("Canvas").GetComponentsInChildren<Image>();
 
         for (int i = 0; i < inventoryList.Count; i++)
         {
@@ -48,8 +48,8 @@ public class Inventory : MonoBehaviour {
             var sprite = (Sprite)Resources.Load(name2, typeof(Sprite));
 
             image[i].sprite = sprite;
-        }*/
-
+        }
+        */
     }
 
     // Update is called once per frame

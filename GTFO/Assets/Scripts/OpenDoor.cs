@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class OpenDoor : MonoBehaviour {
@@ -18,7 +19,8 @@ public class OpenDoor : MonoBehaviour {
 
     //Card to open
     public string cardToOpen = "Karo2";
-    
+    private Renderer renderer;
+
 
     void Start () {
 
@@ -28,12 +30,15 @@ public class OpenDoor : MonoBehaviour {
         startRot = transform.eulerAngles;
         endRot = new Vector3(startRot.x, startRot.y + angleDoor, startRot.z);
 
+        renderer = gameObject.GetComponentInChildren<Renderer>();
+        renderer.material.mainTexture = Resources.Load(cardToOpen) as Texture2D;
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
-		//Debug.Log ("allowed: "+canOpen);
+
+        //Debug.Log ("allowed: "+canOpen);
         if (canOpen) {
             if (Input.GetKeyDown("f"))
             {

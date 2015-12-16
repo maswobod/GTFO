@@ -6,15 +6,18 @@ public class pickupItem : MonoBehaviour {
 
     //Card with Default Value
     public string cardValue = "Karo2";
+    private Renderer renderer;
 
-	void Start () {
-	
-	}
+    void Start () {
+        renderer = GetComponent<Renderer>();
+        Debug.Log(Resources.Load(cardValue));
+        renderer.material.mainTexture = Resources.Load(cardValue) as Texture2D;
+    }
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        
+    }
 
     public void OnTriggerEnter(Collider col)
     {
