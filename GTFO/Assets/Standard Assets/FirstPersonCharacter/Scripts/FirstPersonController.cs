@@ -12,8 +12,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
-		[SerializeField] private float m_RunSpeed;
-		[SerializeField] private float m_SneakSpeed;
+        [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -42,10 +41,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private float m_NextStep;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
-		private Animator animator;
-		private bool sneaking=false;
-		private bool standing = false;
-		private bool hideing = false;
 
         // Use this for initialization
         private void Start()
@@ -60,7 +55,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-			animator = GameObject.FindWithTag ("PlayerBody").GetComponent<Animator> ();
         }
 
 
@@ -103,11 +97,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
-			if (speed == 0) {
-				standing = true;
-			} else {
-				standing = false;
-			}
             Vector3 desiredMove = transform.forward*m_Input.y + transform.right*m_Input.x;
 
             // get a normal for the surface that is being touched to move along it
@@ -140,7 +129,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             ProgressStepCycle(speed);
             UpdateCameraPosition(speed);
-			SetAnimationParams (speed);
         }
 
 
@@ -172,8 +160,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayFootStepAudio()
         {
-			bool is_sneaking = Input.GetKey(KeyCode.X);
-            if (!m_CharacterController.isGrounded||is_sneaking)
+            if (!m_CharacterController.isGrounded)
             {
                 return;
             }
@@ -219,8 +206,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
             bool waswalking = m_IsWalking;
-			bool is_sneaking = Input.GetKey(KeyCode.X);
-			sneaking = is_sneaking;
+
 #if !MOBILE_INPUT
             // On standalone builds, walk/run speed is modified by a key press.
             // keep track of whether or not the character is walking or running
@@ -228,12 +214,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 #endif
             // set the desired speed to be walking or running
             speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
-			speed = is_sneaking ? m_SneakSpeed : speed;
             m_Input = new Vector2(horizontal, vertical);
 
-			if (horizontal == 0 && vertical == 0) {
-				speed=0;
-			}
             // normalize input if it exceeds 1 in combined length:
             if (m_Input.sqrMagnitude > 1)
             {
@@ -271,33 +253,5 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
         }
-    
-		private void SetAnimationParams(float speed){
-			if (speed > m_WalkSpeed) {
-				animator.SetBool ("walk", false);
-				animator.SetBool ("run", true);
-			} else if (speed > 0) {
-				animator.SetBool ("walk", true);
-				animator.SetBool ("run", false);
-			} else {
-				animator.SetBool ("walk", false);
-				animator.SetBool ("run", false);
-			}
-		}
-		public bool IsMakingNoise(){
-			if (sneaking) {
-				return false;
-			}
-			if (standing) {
-				return false;
-			}
-			return true;
-		}
-		public bool IsVisibleForEnemy(){
-			return !hideing;
-		}
-		public void setHideing(bool hideing){
-			this.hideing = hideing;
-		}
-	}
+    }
 }
